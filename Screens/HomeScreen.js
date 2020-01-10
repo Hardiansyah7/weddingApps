@@ -57,44 +57,58 @@ export default class HomeScreen extends Component {
     // return <TabHelper />;
     const items = [
       {
-        im: images.img1,
-        nama: 'Wedding1',
+        im: images.imgB1,
+        nama: 'Betawi Modern',
         code: '#2ecc71',
-        cap:'dasdasdasdasddasdasmdaksjldsd',
-        hrg:'Rp.100000',
-        jdl:'Wedding org',
-        upd:'updated on Oct 2019',
-        desc:'ini addalah tempat wedding di tempat saya yang indah dan sangan menyenngkan'
+        hrg: 'Rp.100.000',
+        jdl: 'Wedding Decoration Betawi Modern',
+        upd: 'Updated 10 January 2020',
+        loc: 'Jakarta',
+        desc:
+          'Wedding Planner: @mors.wedding,Venue: @ambharajakarta,Catering: @ambharajakarta,Photography & Videography: Fadli,Entertainment: @sausalitowedding,Brides MUA: @fidelhertamakeup,Brides Attire: @hilda.jusnita,Bride Suntiang: @anggunbusana,Grooms & Family Attire: @anggunbusana',
+        wa: '081510431134',
+        ig: 'nonamanis.creativeplanner',
+        eml: 'nonamaniscreative.com',
       },
       {
-        im: images.img1,
-        nama: 'Wedding2',
-        code: '#9b59b6',
-        cap:'dasdasdasdasdasnkdnasjdbasbdasbdasdd',
-        hrg:'Rp.100000',
-        jdl:'Wedding org2',
-        upd:'updated on Oct 2019',
-        desc:'ini addalah tempat wedding di tempat saya yang indah dan sangan menyenngkan'
-      },
-      {
-        im: images.img1,
-        nama: 'Wedding3',
-        code: '#1abc9c',
-        cap:'dasdasdasdasdajkdbajsbdabdaiubdd',
-        hrg:'Rp.100000',
-        jdl:'Wedding org3',
-        upd:'updated on Oct 2019',
-        desc:'ini addalah tempat wedding di tempat saya yang indah dan sangan menyenngkan'
-      },
-      {
-        im: images.img1,
-        nama: 'Wedding4',
+        im: images.imgS1,
+        nama: 'Sunda Modern',
         code: '#34495e',
-        cap:'dasdasdasdasd',
-        hrg:'Rp.100000',
-        jdl:'Wedding org4',
-        upd:'updated on Oct 2019',
-        desc:'ini addalah tempat wedding di tempat saya yang indah dan sangan menyenngkan'
+        hrg: 'Rp.200.000',
+        jdl: 'Wedding org4',
+        loc:'Jakarta',
+        upd: 'Updated 10 January 2020',
+        desc:
+          'Decor and Sangjit Box by @levinedecor,Dress by @sokowiyanto,Cheongsam by @pizzarosensationdesign,Makeup by @kunsoomakeupartist,Hairdo by @chennysulistyo,Shoes by @regisbridalshoes.Accessories by @rinaldyyunardi,Organized by @amoretti_awp,Photography by @aspictura_ @aldosinarta,MC by @laurence.jehezquiell,Hongbao by @viviang_co',
+        wa: '+628121880823',
+        ig: 'levinedecor',
+        eml: 'Asklevinedecor@gmail.com',
+        },
+      {
+        im: images.imgJ1,
+        nama: 'Jawa Modern',
+        code: '#9b59b6',
+        hrg: 'Rp.100000',
+        upd: 'updated on Oct 2019',
+        loc: 'Jakarta',
+        desc:
+        'Decor and Sangjit Box by @levinedecor,Dress by @sokowiyanto,Cheongsam by @pizzarosensationdesign,Makeup by @kunsoomakeupartist,Hairdo by @chennysulistyo,Shoes by @regisbridalshoes.Accessories by @rinaldyyunardi,Organized by @amoretti_awp,Photography by @aspictura_ @aldosinarta,MC by @laurence.jehezquiell,Hongbao by @viviang_co',
+        wa: '+628121880823',
+          ig: 'levinedecor',
+          eml: 'Asklevinedecor@gmail.com',
+      },
+      {
+        im: images.imgM1,
+        nama: 'Minang Modern',
+        code: '#1abc9c',
+        hrg: 'Rp.100000',
+        loc:'Jakarta',
+        upd: 'Updated 10 January 2020',
+        desc:
+        'Wedding Planner: @mors.wedding,Venue: @ambharajakarta,Catering: @ambharajakarta,Photography & Videography: Fadli,Entertainment: @sausalitowedding,Brides MUA: @fidelhertamakeup,Brides Attire: @hilda.jusnita,Bride Suntiang: @anggunbusana,Grooms & Family Attire: @anggunbusana',
+        wa: '081510431134',
+        ig: 'nonamanis.creativeplanner',
+        eml: 'nonamaniscreative.com',
       },
     ];
     return (
@@ -173,9 +187,7 @@ export default class HomeScreen extends Component {
         {/* CONTENT */}
         <ScrollView style={{flex: 1}}>
           <View style={{display: 'flex', justifyContent: 'center'}}>
-            <Text style={{padding: 10, fontSize: 30, fontFamily: 'britanic'}}>
-              Top of The Week
-            </Text>
+            <Text style={{padding: 10, fontSize: 30}}>Top of The Week</Text>
           </View>
           <FlatGrid
             itemDimension={150}
@@ -186,32 +198,32 @@ export default class HomeScreen extends Component {
             renderItem={({item, index}) => (
               <View style={{flex: 1}}>
                 <TouchableOpacity
-                  style={[styles.itemContainer,]}
+                  style={[styles.itemContainer]}
                   onPress={() =>
                     this.props.navigation.navigate('Detail', {
                       im: item.im,
                       nama: item.nama,
                       code: item.code,
-                      cap: item.cap,
                       hrg: item.hrg,
-                      jdl:item.jdl,
-                      upd:item.upd,
-                      desc:item.desc
+                      jdl: item.jdl,
+                      upd: item.upd,
+                      desc: item.desc,
+                      loc: item.loc,
+                      wa: item.wa,
+                      ig: item.ig,
+                      eml: item.eml,
                     })
                   }
                   activeOpacity={0.4}>
-                      <Image
+                  <Image
                     source={item.im}
-                    style={{width: '100%', height: 800}}
-                    resizeMode={'center'}
+                    style={{width: '100%', height: 200}}
+                    resizeMode={'cover'}
                   />
-                  {/* <Text style={styles.itemName}>{item.nama}</Text>
-                <Text style={styles.itemCode}>{item.periode}</Text> */}
                 </TouchableOpacity>
                 <View>
-                    <Text style={styles.itemName}>{item.nama}</Text>
-                    <Text style={styles.itemCap}>{item.cap}</Text>
-                    <Text style={styles.itemhrg}>{item.hrg}</Text>
+                  <Text style={styles.itemName}>{item.nama}</Text>
+                  <Text style={styles.itemhrg}>{item.hrg}</Text>
                 </View>
               </View>
             )}
@@ -241,7 +253,7 @@ const styles = StyleSheet.create({
   },
   itemhrg: {
     fontSize: 15,
-    color:'green'
+    color: 'green',
   },
   itemCode: {
     fontWeight: '600',

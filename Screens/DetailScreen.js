@@ -11,7 +11,7 @@ export default class DetailScreen extends Component {
     }
 
 
-    componentDidMount() {
+      componentDidMount() {
         BackHandler.addEventListener('hardwareBackPress', this.onBackEvent)
     }
 
@@ -24,6 +24,7 @@ export default class DetailScreen extends Component {
         return true
     }
 
+
     render() {
         return (
             <ScrollView style={{ flex: 1 }}>
@@ -31,12 +32,13 @@ export default class DetailScreen extends Component {
                     <Text style={styles.textUtama}> {this.props.navigation.state.params.nama} </Text>
                 </View> */}
                     <View style={{ height:300,marginTop:-3}}>
-                        <Image source={this.state.img} style={{height: 300,width:'100%',padding:20}} resizeMode={"contain"}/>
+                        <Image source={this.state.img} style={{height: 300,width:'100%',padding:20}} resizeMode={"cover"}/>
                     </View>
                     <View >
-                        <Text style={{fontSize:25,padding:5}}>{this.props.navigation.state.params.jdl}</Text>
-                        <Text style={{fontSize:10,paddingLeft:10}}>{this.props.navigation.state.params.upd}</Text>
-                        <Text style={{fontSize:15,paddingLeft:10,marginTop:3}}>{this.props.navigation.state.params.desc}</Text>
+                        <Text style={{fontSize:20,padding:5,fontWeight:'bold'}}>{this.props.navigation.state.params.nama}</Text>
+                        <Text style={{fontSize:12,paddingLeft:10}}>{this.props.navigation.state.params.upd}</Text>
+                        <Text style={{fontSize:12,paddingLeft:10}}>{this.props.navigation.state.params.loc}</Text>
+                        <Text style={{fontSize:20,paddingLeft:10,marginTop:3}}>{this.props.navigation.state.params.desc}</Text>
                     </View>
             </ScrollView>
         )

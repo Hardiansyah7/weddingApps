@@ -31,7 +31,8 @@ import {createStackNavigator} from 'react-navigation-stack';
 import HomeScreen from './Screens/HomeScreen';
 import IdeasScreen from './Screens/IdeasScreen';
 import AboutScreen from './Screens/AboutScreen';
-import DetailScreen from './Screens/DetailScreen'
+import DetailScreen from './Screens/DetailScreen';
+import Splash from './Screens/Splash'
 
 //Navigation Drawer Structure for all screen
 class NavigationDrawerStructure extends Component {
@@ -58,6 +59,7 @@ class NavigationDrawerStructure extends Component {
 //Stack Navigator for First Option of Navigation Drawer
 const Home_StackNavigator = createStackNavigator({
   //All the screen from the Screen1 will be indexed here
+  Splash : {screen : Splash,navigationOptions:{header : null}},
   Home: {
     screen: HomeScreen,
     navigationOptions: ({navigation}) => ({
