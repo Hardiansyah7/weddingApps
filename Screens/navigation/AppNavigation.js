@@ -19,8 +19,6 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import images from './Screens/image/images'
-
 //Import required react-navigation component
 import {createAppContainer} from 'react-navigation';
 
@@ -29,9 +27,8 @@ import {createStackNavigator} from 'react-navigation-stack';
 
 //Import all the screens for Drawer/ Sidebar
 import HomeScreen from './Screens/HomeScreen';
-import IdeasScreen from './Screens/IdeasScreen';
-import AboutScreen from './Screens/AboutScreen';
-import DetailScreen from './Screens/DetailScreen'
+import ProfileScreen from './Screens/ProfileScreen';
+import SettingScreen from './Screens/SettingScreen';
 
 //Navigation Drawer Structure for all screen
 class NavigationDrawerStructure extends Component {
@@ -46,7 +43,7 @@ class NavigationDrawerStructure extends Component {
         <TouchableOpacity onPress={this.toggleDrawer.bind(this)}>
           {/*Donute Button Image */}
           <Image
-            source={images.imgDr}
+            source={require('./Screens/image/drawer.png')}
             style={{width: 30, height: 25, marginLeft: 5}}
           />
         </TouchableOpacity>
@@ -61,7 +58,7 @@ const Home_StackNavigator = createStackNavigator({
   Home: {
     screen: HomeScreen,
     navigationOptions: ({navigation}) => ({
-      title: 'Home ',
+      title: 'HomeScreen',
       headerLeft: () => <NavigationDrawerStructure navigationProps={navigation} />,
       headerStyle: {
         backgroundColor: '#4682B4',
@@ -69,23 +66,13 @@ const Home_StackNavigator = createStackNavigator({
       headerTintColor: '#fff',
     }),
   },
-  Detail: {
-    screen: DetailScreen,
-    navigationOptions: {
-      headerTintColor: 'white',
-      headerStyle: {
-        backgroundColor: '#4682B4',
-        elevation:0
-      },
-    },
-  },
 });
 
 //Stack Navigator for Second Option of Navigation Drawer
-const Ideas_StackNavigator = createStackNavigator({
+const Profile_StackNavigator = createStackNavigator({
   //All the screen from the Screen2 will be indexed here
-  Ideas: {
-    screen: IdeasScreen,
+  Profile: {
+    screen: ProfileScreen,
     navigationOptions: ({navigation}) => ({
       title: 'Wedding Ideas',
       headerLeft: () => <NavigationDrawerStructure navigationProps={navigation} />,
@@ -99,12 +86,12 @@ const Ideas_StackNavigator = createStackNavigator({
 });
 
 //Stack Navigator for Third Option of Navigation Drawer
-const About_StackNavigator = createStackNavigator({
+const Setting_StackNavigator = createStackNavigator({
   //All the screen from the Screen3 will be indexed here
-  About: {
-    screen: AboutScreen,
+  Setting: {
+    screen: SettingScreen,
     navigationOptions: ({navigation}) => ({
-      title: 'About Us',
+      title: 'Setting',
       headerLeft: () => <NavigationDrawerStructure navigationProps={navigation} />,
 
       headerStyle: {
@@ -126,19 +113,19 @@ const DrawerNavigatorExample = createDrawerNavigator({
     },
   },
 
-  Ideas: {
+  Profile: {
     //Title
-    screen: Ideas_StackNavigator,
+    screen: Profile_StackNavigator,
     navigationOptions: {
       drawerLabel: 'Wedding Ideas',
     },
   },
 
-  About: {
+  Setting: {
     //Title
-    screen: About_StackNavigator,
+    screen: Setting_StackNavigator,
     navigationOptions: {
-      drawerLabel: 'About Us',
+      drawerLabel: 'Tentang Kami',
     },
   },
 });
