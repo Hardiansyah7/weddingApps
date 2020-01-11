@@ -14,24 +14,11 @@ import {FlatGrid} from 'react-native-super-grid';
 import Modal from 'react-native-modal'; // import all basic components
 import images from './image/images';
 
-import TabHelper from '../Screens/tabnav/tabhelper/TabHelper';
-
 export default class HomeScreen extends Component {
   //Return Tab Navigator from here to render tab in option one of navigation drawer
   constructor(props) {
     super(props);
     this.state = {
-      nama: 'MUHAMMAD SAW.',
-      alias: 'Muhammad bin Abdullah.',
-      usia: '63 tahun.',
-      periode: '570-632 M.',
-      tempat_diutus: 'Mekkah.',
-      disebut: 'Al-Quran menyebutkan namanya sebanyak 25 kali.',
-      keturunan:
-        '7 anak; 3 laki-laki Qasim, Abdullah dan Ibrahim, dan 4 perempuan Zainab, Ruqayyah, Ummi Kultsum dan Fatimah az-Zahra.',
-      kaum: 'Bangsa Arab.',
-      tempat_wafat: 'Madinah.',
-      code: '#2c3e50',
       modal: false,
     };
   }
@@ -57,6 +44,7 @@ export default class HomeScreen extends Component {
     // return <TabHelper />;
     const items = [
       {
+        id:1,
         im: images.imgB1,
         nama: 'Betawi Modern',
         code: '#2ecc71',
@@ -64,13 +52,23 @@ export default class HomeScreen extends Component {
         jdl: 'Wedding Decoration Betawi Modern',
         upd: 'Updated 10 January 2020',
         loc: 'Jakarta',
-        desc:
-          'Wedding Planner: @mors.wedding,Venue: @ambharajakarta,Catering: @ambharajakarta,Photography & Videography: Fadli,Entertainment: @sausalitowedding,Brides MUA: @fidelhertamakeup,Brides Attire: @hilda.jusnita,Bride Suntiang: @anggunbusana,Grooms & Family Attire: @anggunbusana',
+        k1:'Wedding Planner: @mors.wedding',
+        k2:'Venue: @ambharajakarta',
+        k3:'Catering: @ambharajakarta',
+        k4:'Photography & Videography: Fadli',
+        k5:'Entertainment: @sausalitowedding',
+        k6:'Brides MUA: @fidelhertamakeup',
+        k7:'Brides Attire: @hilda.jusnita',
+        k8:'Bride Suntiang: @anggunbusana',
+        k9:'Grooms & Family Attire: @anggunbusana',
+        k10:'',
+        k11:'',
         wa: '081510431134',
         ig: 'nonamanis.creativeplanner',
         eml: 'nonamaniscreative.com',
       },
       {
+        id:2,
         im: images.imgS1,
         nama: 'Sunda Modern',
         code: '#34495e',
@@ -78,34 +76,63 @@ export default class HomeScreen extends Component {
         jdl: 'Wedding org4',
         loc:'Jakarta',
         upd: 'Updated 10 January 2020',
-        desc:
-          'Decor and Sangjit Box by @levinedecor,Dress by @sokowiyanto,Cheongsam by @pizzarosensationdesign,Makeup by @kunsoomakeupartist,Hairdo by @chennysulistyo,Shoes by @regisbridalshoes.Accessories by @rinaldyyunardi,Organized by @amoretti_awp,Photography by @aspictura_ @aldosinarta,MC by @laurence.jehezquiell,Hongbao by @viviang_co',
+        k1:'Decor and Sangjit Box by @levinedecor',
+        k2:'Dress by @sokowiyanto',
+        k3:'Cheongsam by @pizzarosensationdesign',
+        k4:'Makeup by @kunsoomakeupartist',
+        k5:'Hairdo by @chennysulistyo',
+        k6:'Shoes by @regisbridalshoes',
+        k7:'Accessories by @rinaldyyunardi',
+        k8:'Organized by @amoretti_awp',
+        k9:'Photography by @aspictura_ @aldosinarta',
+        k10:'MC by @laurence.jehezquiell',
+        k11:'Hongbao by @viviang_co',
         wa: '+628121880823',
         ig: 'levinedecor',
         eml: 'Asklevinedecor@gmail.com',
         },
       {
+        id:3,
         im: images.imgJ1,
         nama: 'Jawa Modern',
         code: '#9b59b6',
         hrg: 'Rp.100000',
         upd: 'updated on Oct 2019',
         loc: 'Jakarta',
-        desc:
-        'Decor and Sangjit Box by @levinedecor,Dress by @sokowiyanto,Cheongsam by @pizzarosensationdesign,Makeup by @kunsoomakeupartist,Hairdo by @chennysulistyo,Shoes by @regisbridalshoes.Accessories by @rinaldyyunardi,Organized by @amoretti_awp,Photography by @aspictura_ @aldosinarta,MC by @laurence.jehezquiell,Hongbao by @viviang_co',
+        k1:'Decor and Sangjit Box by @levinedecor',
+        k2:'Dress by @sokowiyanto',
+        k3:'Cheongsam by @pizzarosensationdesign',
+        k4:'Makeup by @kunsoomakeupartist',
+        k5:'Hairdo by @chennysulistyo',
+        k6:'Shoes by @regisbridalshoes',
+        k7:'Accessories by @rinaldyyunardi',
+        k8:'Organized by @amoretti_awp',
+        k9:'Photography by @aspictura_ @aldosinarta',
+        k10:'MC by @laurence.jehezquiell',
+        k11:'Hongbao by @viviang_co',
         wa: '+628121880823',
-          ig: 'levinedecor',
-          eml: 'Asklevinedecor@gmail.com',
+        ig: 'levinedecor',
+        eml: 'Asklevinedecor@gmail.com',
       },
       {
+        id:4,
         im: images.imgM1,
         nama: 'Minang Modern',
         code: '#1abc9c',
         hrg: 'Rp.100000',
         loc:'Jakarta',
         upd: 'Updated 10 January 2020',
-        desc:
-        'Wedding Planner: @mors.wedding,Venue: @ambharajakarta,Catering: @ambharajakarta,Photography & Videography: Fadli,Entertainment: @sausalitowedding,Brides MUA: @fidelhertamakeup,Brides Attire: @hilda.jusnita,Bride Suntiang: @anggunbusana,Grooms & Family Attire: @anggunbusana',
+        k1:'Wedding Planner: @mors.wedding',
+        k2:'Venue: @ambharajakarta',
+        k3:'Catering: @ambharajakarta',
+        k4:'Photography & Videography: Fadli',
+        k5:'Entertainment: @sausalitowedding',
+        k6:'Brides MUA: @fidelhertamakeup',
+        k7:'Brides Attire: @hilda.jusnita',
+        k8:'Bride Suntiang: @anggunbusana',
+        k9:'Grooms & Family Attire: @anggunbusana',
+        k10:'',
+        k11:'',
         wa: '081510431134',
         ig: 'nonamanis.creativeplanner',
         eml: 'nonamaniscreative.com',
@@ -113,6 +140,7 @@ export default class HomeScreen extends Component {
     ];
     return (
       <View style={{flex: 1}}>
+
         <Modal
           isVisible={this.state.modal}
           onBackButtonPress={() => this.setState({modal: false})}
@@ -187,7 +215,7 @@ export default class HomeScreen extends Component {
         {/* CONTENT */}
         <ScrollView style={{flex: 1}}>
           <View style={{display: 'flex', justifyContent: 'center'}}>
-            <Text style={{padding: 10, fontSize: 30}}>Top of The Week</Text>
+            <Text style={{padding: 10, textAlign:'center',fontSize: 30,fontFamily:'serif'}}>Top of The Week</Text>
           </View>
           <FlatGrid
             itemDimension={150}
@@ -201,6 +229,7 @@ export default class HomeScreen extends Component {
                   style={[styles.itemContainer]}
                   onPress={() =>
                     this.props.navigation.navigate('Detail', {
+                      id:item.id,
                       im: item.im,
                       nama: item.nama,
                       code: item.code,
@@ -212,6 +241,17 @@ export default class HomeScreen extends Component {
                       wa: item.wa,
                       ig: item.ig,
                       eml: item.eml,
+                      k1:item.k1,
+                      k2:item.k2,
+                      k3:item.k3,
+                      k4:item.k4,
+                      k5:item.k5,
+                      k6:item.k6,
+                      k7:item.k7,
+                      k8:item.k8,
+                      k9:item.k9,
+                      k10:item.k10,
+                      k11:item.k11,
                     })
                   }
                   activeOpacity={0.4}>
@@ -223,7 +263,6 @@ export default class HomeScreen extends Component {
                 </TouchableOpacity>
                 <View>
                   <Text style={styles.itemName}>{item.nama}</Text>
-                  <Text style={styles.itemhrg}>{item.hrg}</Text>
                 </View>
               </View>
             )}
@@ -240,20 +279,14 @@ const styles = StyleSheet.create({
   itemContainer: {
     justifyContent: 'center',
     borderRadius: 5,
-    // padding: 5,
     height: 200,
   },
   itemName: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
     alignSelf: 'center',
-  },
-  itemCap: {
-    fontSize: 15,
-  },
-  itemhrg: {
-    fontSize: 15,
-    color: 'green',
+    padding:10,
+    fontFamily: "serif",
   },
   itemCode: {
     fontWeight: '600',

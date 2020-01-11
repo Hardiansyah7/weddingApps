@@ -11,10 +11,7 @@ import React, {Component} from 'react';
 import 'react-native-gesture-handler';
 //import react in our code.
 import {
-  StyleSheet,
-  Platform,
   View,
-  Text,
   Image,
   TouchableOpacity,
 } from 'react-native';
@@ -29,7 +26,6 @@ import {createStackNavigator} from 'react-navigation-stack';
 
 //Import all the screens for Drawer/ Sidebar
 import HomeScreen from './Screens/HomeScreen';
-import IdeasScreen from './Screens/IdeasScreen';
 import AboutScreen from './Screens/AboutScreen';
 import DetailScreen from './Screens/DetailScreen';
 import Splash from './Screens/Splash'
@@ -59,7 +55,7 @@ class NavigationDrawerStructure extends Component {
 //Stack Navigator for First Option of Navigation Drawer
 const Home_StackNavigator = createStackNavigator({
   //All the screen from the Screen1 will be indexed here
-  Splash : {screen : Splash,navigationOptions:{header : null}},
+  Splash : {screen : Splash,navigationOptions:{headerShown : false}},
   Home: {
     screen: HomeScreen,
     navigationOptions: ({navigation}) => ({
@@ -80,23 +76,6 @@ const Home_StackNavigator = createStackNavigator({
         elevation:0
       },
     },
-  },
-});
-
-//Stack Navigator for Second Option of Navigation Drawer
-const Ideas_StackNavigator = createStackNavigator({
-  //All the screen from the Screen2 will be indexed here
-  Ideas: {
-    screen: IdeasScreen,
-    navigationOptions: ({navigation}) => ({
-      title: 'Wedding Ideas',
-      headerLeft: () => <NavigationDrawerStructure navigationProps={navigation} />,
-
-      headerStyle: {
-        backgroundColor: '#4682B4',
-      },
-      headerTintColor: '#fff',
-    }),
   },
 });
 
@@ -125,14 +104,6 @@ const DrawerNavigatorExample = createDrawerNavigator({
     screen: Home_StackNavigator,
     navigationOptions: {
       drawerLabel: 'Home',
-    },
-  },
-
-  Ideas: {
-    //Title
-    screen: Ideas_StackNavigator,
-    navigationOptions: {
-      drawerLabel: 'Wedding Ideas',
     },
   },
 

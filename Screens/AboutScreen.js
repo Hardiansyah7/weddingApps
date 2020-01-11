@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet, ScrollView, TouchableOpacity, BackHandler } from 'react-native'
 import { FlatGrid } from 'react-native-super-grid';
-import Modal from "react-native-modal";
 
 export default class AboutScreen extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            modal: false,
         }
     }
 
@@ -20,12 +18,8 @@ export default class AboutScreen extends Component {
     }
 
     onBackEvent = () => {
-        this.setState({ modal: true })
+        this.props.navigation.goBack()
         return true
-    }
-
-    closeApp() {
-        BackHandler.exitApp()
     }
 
     render() {
@@ -36,29 +30,12 @@ export default class AboutScreen extends Component {
         ]
         return (
             <View style={{ flex: 1 }}>
-                
-                <Modal
-                    isVisible={this.state.modal}
-                    onBackButtonPress={() => this.setState({ modal: false })}
-                    onBackdropPress={() => this.setState({ modal: false })}
-                >
-                    <View style={{ height: 200, width: '95%', backgroundColor: 'white', alignSelf: 'center', borderRadius: 10 }}>
-                        <View style={{ height: 75, width: '100%', backgroundColor: '#458cff', borderTopRightRadius: 10, borderTopLeftRadius: 10, justifyContent: 'center', paddingHorizontal: 20 }}>
-                            <Text style={{ alignSelf: 'center', fontSize: 16, color: 'white', fontWeight: 'bold' }}>Anda yakin ingin keluar aplikasi ini?</Text>
-                        </View>
-                        <View style={{ justifyContent: 'space-around', flexDirection: 'row', height: 125, paddingHorizontal: 20 }}>
-                            <TouchableOpacity style={{ alignSelf: 'center', backgroundColor: '#e3e3e3', width: 80, height: 30, justifyContent: 'center', borderRadius: 10, elevation: 10 }} onPress={()=> this.setState({ modal: false }, ()=> this.closeApp())}>
-                                <Text style={{ alignSelf: 'center' }}>Keluar</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={{ alignSelf: 'center', backgroundColor: '#e3e3e3', width: 80, height: 30, justifyContent: 'center', borderRadius: 10, elevation: 10 }}  onPress={()=> this.setState({ modal: false })} >
-                                <Text style={{ alignSelf: 'center' }}>Batal</Text>
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-                </Modal>
 
                 {/* CONTENT */}
                 {/* <View style={{flex: 1}}> */}
+                <View style={{justifyContent:'center',alignItems:"center"}}>
+                <Text style={{fontSize:40,fontFamily:'sans-serif-thin',padding:10}}>WE ARE A TEAM</Text>
+                </View>
                     <FlatGrid
                         itemDimension={200}
                         spacing={10}
@@ -84,6 +61,7 @@ const styles = StyleSheet.create({
         height: 150,
     },
     itemName: {
+        fontFamily:"serif",
         fontSize: 20,
         color: '#fff',
         fontWeight: "bold",
